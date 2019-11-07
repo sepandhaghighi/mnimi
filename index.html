@@ -1,0 +1,87 @@
+<!doctype html>
+<html manifest="cache.appcache">
+<head>
+    <link href="css/awsome/css/font-awesome.min.css" rel=stylesheet>
+    <link href="css/style.css" rel=stylesheet type="text/css">
+    <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/themes/google/google.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <script src="js/shortcut.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <title>Amnesia</title>
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.json" />
+    <link href="images/favicon/4.png" rel="shortcut icon">
+    <link href="images/favicon/1.png" rel="-touch-icon">
+    <link href="images/favicon/2.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/favicon/3.png" rel="apple-touch-icon" sizes="114x114">
+</head>
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage">    
+    <div id="particles-js" itemprop="particleSection"> </div>
+        <div class="siteWrapper" id="siteWrapper" itemprop="mainContentOfPage">
+            <div class="shortcut">
+                <h2>Shortcuts</h2>
+                <p>Restart (r)</p>
+                <p>Quick Help (q)</p>
+            </div>
+            <div class="music_control">
+                <p id="sound_on_off" onclick="audioControl();"><i class="fa fa-volume-off fa-3x" aria-hidden="true"></i></p>
+            </div>
+                <h1 id="game_name" class="get_name" itemprop="siteName">Loading ...</h1>
+            <div class="header" id="header" itemprop="siteMenu" >
+                <button onclick="redirect(5);" class="reset" id="help" title="Help Page">Help</button>
+                <button onclick="redirect(6);" class="reset" id="support" title="Support Game">Support</button>
+                <button onclick="scoreTable();" class="reset" id="score_button" title="Score">Score</button>
+            </div>
+            <table class="amnesia" id="amnesia" itemprop="gameTable">
+                <tr>
+                    <td id="1" onclick="replyClick(this.id)"></td>
+                    <td id="2" onclick="replyClick(this.id)"></td>
+
+                </tr>
+                <tr>
+                    <td id="3" onclick="replyClick(this.id)"></td>
+                    <td id="4" onclick="replyClick(this.id)"></td>
+                </tr>
+            </table>
+
+            <table class="score" id="score" itemprop="scoreTable">
+                <tr>
+                    <td>Score</td>
+                    <td id="win">0</td>
+                </tr>
+            </table>
+            <div class="button_section" itemprop="controlButtonSection">
+                <button onclick="startGame();" class="reset" title="Start Game" id="start">Start</button>
+                <button onclick="restartGame();" class="reset" title="Restart Game" id="restart">Reset</button>
+                <button onclick="redirect(5);" class="reset" id="help2" title="Help Page">Help</button>
+                <button onclick="redirect(6);" class="reset" id="support2" title="Support Game">Support</button>
+            </div>
+
+            <div id="login-footer" itemprop="siteFooter">
+                <p>&nbsp; Designed With ❤️ &nbsp;&nbsp;</p>
+                <p>By<a href="http://www.shaghighi.ir" title="Sepand Haghighi" target="_blank">&nbsp;S.Haghighi</a></p>
+            </div>
+        </div>
+    
+
+    <script>
+        begin();
+    </script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
