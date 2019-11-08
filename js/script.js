@@ -1,14 +1,18 @@
-var CSS_COLOR_NAMES = ["Aqua", "Aquamarine", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "ForestGreen", "Fuchsia", "Gainsboro", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "Yellow", "YellowGreen"];
+var colorList = [];
+var darkColors = ["BLACK","DARKSLATEGRAY","SLATEGRAY","DIMGRAY","GRAY","MAROON","BROWN","SIENNA","SADDLEBROWN","CHOCOLATE","PERU","DARKGOLDENROD","GOLDENROD","MIDNIGHTBLUE","NAVY","DARKBLUE","MEDIUMBLUE","BLUE","ROYALBLUE","MEDIUMSLATEBLUE","DODGERBLUE","STEELBLUE","TEAL","DARKCYAN","DARKOLIVEGREEN","OLIVEDRAB","DARKGREEN","GREEN","FORESTGREEN","MEDIUMSEAGREEN","SEAGREEN","LIMEGREEN","LIME","MEDIUMSLATEBLUE","INDIGO","DARKMAGENTA","DARKORCHID","DARKVIOLET","REBECCAPURPLE","BLUEVIOLET","MAGENTA","DARKKHAKI","ORANGE","DARKORANGE","ORANGERED","MEDIUMVIOLETRED","DEEPPINK","DARKRED","FIREBRICK","RED","CRIMSON"];
+var lightColors = ["LIGHTSALMON","LIGHTCORAL","PINK","LIGHTPINK","LIGHTSALMON","ORANGE","LIGHTYELLOW","LEMONCHIFFON","PAPAYAWHIP","PEACHPUFF","PALEGOLDENROD","LAVENDER","THISTLE","PALEGREEN","MEDIUMAQUAMARINE","LIGHTCYAN","PALETURQUOISE","LIGHTSTEELBLUE","CORNSILK","WHEAT","SNOW","HONEYDEW","MINTCREAM","AZURE","GHOSTWHITE","BEIGE","FLORALWHITE","LINEN","LAVENDERBLUSH","GAINSBORO","SILVER","LIGHTGRAY"];
+colorList = darkColors;
 var color;
+var textColor = "white";
 var selectedItem = [];
 var timeouts = [];
 var currentMove = 0;
 var simFlag = false;
 var playerFlag = false;
 var gameCounter=0;
-var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true"></i>'
-var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true"></i>'
-var timesAwsome = '<i class="fa fa-times fa-3x" aria-hidden="true"></i>'
+var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
+var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
+var timesAwsome = '<i class="fa fa-times fa-3x" aria-hidden="true" style="color:white"></i>'
 var soundOn='<i class="fa fa-volume-up fa-3x" aria-hidden="true" ></i>';
 var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
 var speed = 3000;
@@ -39,9 +43,12 @@ audio.onended = function(){
 };
 
 if (hr>=19||hr<6){
-    tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>';
-    timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:white"></i>';
-    starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>';
+    tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:black"></i>';
+    timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:black"></i>';
+    starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:black"></i>';
+    colorList = lightColors;
+    textColor = "black";
+    
 }
 
 function audioControl(){
@@ -137,7 +144,7 @@ function begin(){
 }
 
 function init() {
-    color = CSS_COLOR_NAMES[Math.floor((Math.random() * CSS_COLOR_NAMES.length))].toLowerCase();
+    color = colorList[Math.floor((Math.random() * colorList.length))].toLowerCase();
     var i, randomNumber, randomCounter, gameName, colorCounter;
     var randomList = [];
     colorCounter = 1;
@@ -145,7 +152,7 @@ function init() {
     gameName.style.color = color;
     gameName.innerHTML = "Mnimi Game";
     while (colorCounter < 5) {
-        randomColor = CSS_COLOR_NAMES[Math.floor((Math.random() * CSS_COLOR_NAMES.length))].toLowerCase();
+        randomColor = colorList[Math.floor((Math.random() * colorList.length))].toLowerCase();
         if (randomList.indexOf(randomColor) < 0) {
             randomList.push(randomColor);
             document.getElementById(colorCounter.toString()).style.backgroundColor=randomColor;
@@ -304,6 +311,8 @@ function playerGo(){
     var i;
     for (i=1;i<5;i++){
         document.getElementById(i.toString()).innerHTML = "GO";
+        document.getElementById(i.toString()).style.color = textColor;
+        document.getElementById(i.toString()).style.fontWeight = "bold";
     }
     timeouts.push(window.setTimeout(function(){clear();},1000));
 }
