@@ -13,6 +13,7 @@ var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
 var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
 var timesAwsome = '<i class="fa fa-times fa-3x" aria-hidden="true" style="color:white"></i>'
+var trophyAwsome = '<i class="fa fa-trophy fa-3x" aria-hidden="true" style="color:white"></i>'
 var soundOn='<i class="fa fa-volume-up fa-3x" aria-hidden="true" ></i>';
 var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
 var speed = 3000;
@@ -46,6 +47,7 @@ if (hr>=19||hr<6){
     tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:black"></i>';
     timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:black"></i>';
     starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:black"></i>';
+    trophyAwsome = '<i class="fa fa-trophy fa-3x" aria-hidden="true" style="color:black"></i>';
     colorList = lightColors;
     textColor = "black";
     
@@ -169,7 +171,7 @@ function set(index,mode=1){
     else if(mode==2){
         document.getElementById(index.toString()).innerHTML = tickAwsome;
     }
-    else{
+    else {
         document.getElementById(index.toString()).innerHTML = timesAwsome;
     }
     
@@ -275,7 +277,8 @@ function replyClick(e) {
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
             if (currentMove==level){
-                timeouts.push(window.setTimeout(function(){reset(e);nextLevel();},500));
+                trophy();
+                timeouts.push(window.setTimeout(function(){reset(e);nextLevel();},700));
             }
            else{
                timeouts.push(window.setTimeout(function(){reset(e);},500));
@@ -304,6 +307,13 @@ function clear(){
     var i;
     for (i=1;i<5;i++){
         document.getElementById(i.toString()).innerHTML = "";
+    }
+}
+
+function trophy(){
+    var i;
+    for (i=1;i<5;i++){
+        document.getElementById(i.toString()).innerHTML = trophyAwsome;
     }
 }
 
