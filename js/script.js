@@ -208,6 +208,7 @@ function scoreUpdate(){
 
 function gameOver(){
     clear();
+    currentMove = 0;
     gameCounter = gameCounter + 1;
     if (score>bestScore){
         bestScore = score;
