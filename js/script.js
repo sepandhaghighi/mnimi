@@ -340,5 +340,5 @@ function restartGame(){
     init();
 }
 
-shortcut.add("q",function(){swalHelp();});
+shortcut.add("h",function(){swalHelp();});
 shortcut.add("r",function(){restartGame();});
