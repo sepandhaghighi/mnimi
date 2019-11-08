@@ -59,17 +59,17 @@ function audioControl(){
 
 function localSave(s,c){
     if (typeof(Storage) !== "undefined") {
-        localStorage.setItem("amnesia_score", s);
-        localStorage.setItem("amnesia_game", c);
+        localStorage.setItem("mnimi_score", s);
+        localStorage.setItem("mnimi_game", c);
     }
     
 }
 
 function localLoad(){
      if (typeof(Storage) !== "undefined") {
-        gameCounter=parseInt(localStorage.getItem("amnesia_game"));
+        gameCounter=parseInt(localStorage.getItem("mnimi_game"));
         if (gameCounter){
-            bestScore=parseInt(localStorage.getItem("amnesia_score"));
+            bestScore=parseInt(localStorage.getItem("mnimi_score"));
             if (bestScore==NaN){
                 bestScore=0;
             }
@@ -143,7 +143,7 @@ function init() {
     colorCounter = 1;
     gameName = document.getElementById("game_name");
     gameName.style.color = color;
-    gameName.innerHTML = "Amnesia Game";
+    gameName.innerHTML = "Mnimi Game";
     while (colorCounter < 5) {
         randomColor = CSS_COLOR_NAMES[Math.floor((Math.random() * CSS_COLOR_NAMES.length))].toLowerCase();
         if (randomList.indexOf(randomColor) < 0) {
