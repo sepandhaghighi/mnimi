@@ -39,9 +39,9 @@ audio.onended = function(){
 };
 
 if (hr>=19||hr<6){
-    tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:gold"></i>';
-    timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:gold"></i>';
-    starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:gold"></i>';
+    tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>';
+    timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:white"></i>';
+    starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>';
 }
 
 function audioControl(){
