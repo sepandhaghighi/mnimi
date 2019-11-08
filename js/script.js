@@ -1,6 +1,7 @@
 var CSS_COLOR_NAMES = ["Aqua", "Aquamarine", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "ForestGreen", "Fuchsia", "Gainsboro", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "Yellow", "YellowGreen"];
 var color;
 var selectedItem = [];
+var timeouts = [];
 var currentMove = 0;
 var simFlag = false;
 var playerFlag = false;
@@ -187,11 +188,11 @@ function sequence(i){
     item = selectedItem[i];
     set(item);
     if((i+1)>=selectedItem.length){
-        window.setTimeout(function(){reset(item);playerGo();simFlag = false;playerFlag = true;},speed);
+        timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;playerFlag = true;},speed));
     }
     else{
-        window.setTimeout(function(){reset(item);},speed);
-        window.setTimeout(function(){sequence(i+1);},speed+offset);
+        timeouts.push(window.setTimeout(function(){reset(item);},speed));
+        timeouts.push(window.setTimeout(function(){sequence(i+1);},speed+offset));
     }
 }
 
@@ -207,6 +208,7 @@ function scoreUpdate(){
 }
 
 function gameOver(){
+    clearTimeouts();
     clear();
     currentMove = 0;
     gameCounter = gameCounter + 1;
@@ -266,16 +268,16 @@ function replyClick(e) {
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
             if (currentMove==level){
-                window.setTimeout(function(){reset(e);nextLevel();},500);
+                timeouts.push(window.setTimeout(function(){reset(e);nextLevel();},500));
             }
            else{
-               window.setTimeout(function(){reset(e);},500);
+               timeouts.push(window.setTimeout(function(){reset(e);},500));
            }
         
         }
        else{
         set(e,3);
-        window.setTimeout(function(){reset(e);gameOver();},500);
+        timeouts.push(window.setTimeout(function(){reset(e);gameOver();},500));
        }
     }
 }
@@ -303,7 +305,7 @@ function playerGo(){
     for (i=1;i<5;i++){
         document.getElementById(i.toString()).innerHTML = "GO";
     }
-    window.setTimeout(function(){clear();},1000);
+    timeouts.push(window.setTimeout(function(){clear();},1000));
 }
 
 function startGame(){
@@ -316,7 +318,16 @@ function startGame(){
     }
 }
 
+function clearTimeouts(){
+    var i;
+    for(i=0;i<timeouts.length;i++){
+        window.clearTimeout(timeouts[i]);
+    }
+    timeouts = [];
+}
+
 function restartGame(){
+    clearTimeouts();
     clear();
     simFlag=false;
     playerFlag=false;
