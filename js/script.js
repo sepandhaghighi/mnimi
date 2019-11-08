@@ -6,6 +6,7 @@ var simFlag = false;
 var playerFlag = false;
 var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true"></i>'
+var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true"></i>'
 var timesAwsome = '<i class="fa fa-times fa-3x" aria-hidden="true"></i>'
 var soundOn='<i class="fa fa-volume-up fa-3x" aria-hidden="true" ></i>';
 var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
@@ -39,6 +40,7 @@ audio.onended = function(){
 if (hr>=19||hr<6){
     tickAwsome='<i class="fa fa-check fa-3x" aria-hidden="true" style="color:gold"></i>';
     timesAwsome='<i class="fa fa-times fa-3x" aria-hidden="true" style="color:gold"></i>';
+    starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:gold"></i>';
 }
 
 function audioControl(){
@@ -152,8 +154,11 @@ function init() {
     }
 }
 
-function set(index,mode=true){
-    if(mode==true){
+function set(index,mode=1){
+    if(mode==1){
+        document.getElementById(index.toString()).innerHTML = starAwsome;
+    }
+    else if(mode==2){
         document.getElementById(index.toString()).innerHTML = tickAwsome;
     }
     else{
@@ -256,7 +261,7 @@ function nextLevel(){
 
 function replyClick(e) {
     if (simFlag==false && playerFlag==true){
-       set(e);        
+       set(e,2);        
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
             if (currentMove==level){
@@ -268,7 +273,7 @@ function replyClick(e) {
         
         }
        else{
-        set(e,false);
+        set(e,3);
         window.setTimeout(function(){reset(e);gameOver();},500);
        }
     }
