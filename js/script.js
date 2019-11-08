@@ -320,6 +320,9 @@ function restartGame(){
     simFlag=false;
     playerFlag=false;
     score=0;
+    currentMove=0;
+    speed=speedDefault;
+    level=1;
     startButtonUpdate(null);
     scoreUpdate();
     init();
