@@ -212,11 +212,11 @@ function gameOver(){
     level = 1;
     speed = speedDefault ;
     swal({
-          title:"Game Over",
+          title:"",
           text: '<p style="font-size:26px;">Score : '+score.toString()+'</p>',
           html: true,
           customClass: "swal-score",
-          imageUrl: "images/timeup.png"
+          imageUrl: "images/gameover.png"
           });
     if (bestScore > 0) {
         document.getElementById("score_button").innerHTML="SCORE("+bestScore.toString()+")";
