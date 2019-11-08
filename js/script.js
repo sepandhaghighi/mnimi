@@ -256,8 +256,7 @@ function startButtonUpdate(i){
     }
 }
 
-function nextLevel(){
-    
+function nextLevel(){  
     clear();
     playerFlag = false;
     currentMove = 0;
@@ -278,7 +277,7 @@ function replyClick(e) {
             currentMove = currentMove + 1;
             if (currentMove==level){
                 trophy();
-                timeouts.push(window.setTimeout(function(){reset(e);nextLevel();},700));
+                timeouts.push(window.setTimeout(function(){nextLevel();},700));
             }
            else{
                timeouts.push(window.setTimeout(function(){reset(e);},500));
