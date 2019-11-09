@@ -1,4 +1,5 @@
 var colorList = [];
+var blockNumber = 4;
 var darkColors = ["BLACK","DARKSLATEGRAY","SLATEGRAY","DIMGRAY","GRAY","MAROON","BROWN","SIENNA","SADDLEBROWN","CHOCOLATE","PERU","DARKGOLDENROD","GOLDENROD","MIDNIGHTBLUE","NAVY","DARKBLUE","MEDIUMBLUE","BLUE","ROYALBLUE","MEDIUMSLATEBLUE","DODGERBLUE","STEELBLUE","TEAL","DARKCYAN","DARKOLIVEGREEN","OLIVEDRAB","DARKGREEN","GREEN","FORESTGREEN","MEDIUMSEAGREEN","SEAGREEN","LIMEGREEN","LIME","MEDIUMSLATEBLUE","INDIGO","DARKMAGENTA","DARKORCHID","DARKVIOLET","REBECCAPURPLE","BLUEVIOLET","MAGENTA","DARKKHAKI","ORANGE","DARKORANGE","ORANGERED","MEDIUMVIOLETRED","DEEPPINK","DARKRED","FIREBRICK","RED","CRIMSON"];
 var lightColors = ["LIGHTSALMON","LIGHTCORAL","PINK","LIGHTPINK","LIGHTSALMON","ORANGE","LIGHTYELLOW","LEMONCHIFFON","PAPAYAWHIP","PEACHPUFF","PALEGOLDENROD","LAVENDER","THISTLE","PALEGREEN","MEDIUMAQUAMARINE","LIGHTCYAN","PALETURQUOISE","LIGHTSTEELBLUE","CORNSILK","WHEAT","SNOW","HONEYDEW","MINTCREAM","AZURE","GHOSTWHITE","BEIGE","FLORALWHITE","LINEN","LAVENDERBLUSH","GAINSBORO","SILVER","LIGHTGRAY"];
 colorList = darkColors;
@@ -153,7 +154,7 @@ function init() {
     gameName = document.getElementById("game_name");
     gameName.style.color = color;
     gameName.innerHTML = "Mnimi Game";
-    while (colorCounter < 5) {
+    while (colorCounter < blockNumber+1) {
         randomColor = colorList[Math.floor((Math.random() * colorList.length))].toLowerCase();
         if (randomList.indexOf(randomColor) < 0) {
             randomList.push(randomColor);
@@ -187,7 +188,7 @@ function selectItems(){
     var item;
     var i=0;
     for(i;i<level;i++){
-        item = Math.floor((Math.random() * 4))+1;
+        item = Math.floor((Math.random() * blockNumber))+1;
         selectedItem.push(item);
     }
 }
@@ -304,21 +305,21 @@ function scoreTable(){
 
 function clear(){
     var i;
-    for (i=1;i<5;i++){
+    for (i=1;i<blockNumber+1;i++){
         document.getElementById(i.toString()).innerHTML = "";
     }
 }
 
 function trophy(){
     var i;
-    for (i=1;i<5;i++){
+    for (i=1;i<blockNumber+1;i++){
         document.getElementById(i.toString()).innerHTML = trophyAwsome;
     }
 }
 
 function playerGo(){
     var i;
-    for (i=1;i<5;i++){
+    for (i=1;i<blockNumber+1;i++){
         document.getElementById(i.toString()).innerHTML = "GO";
         document.getElementById(i.toString()).style.color = textColor;
         document.getElementById(i.toString()).style.fontWeight = "bold";
