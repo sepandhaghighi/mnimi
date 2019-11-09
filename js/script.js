@@ -12,6 +12,8 @@ var simFlag = false;
 var playerFlag = false;
 var mutationFlag1 = false;
 var mutationFlag2 = false;
+var mutationLevel1 = 7;
+var mutationLevel2 = 15;
 var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
 var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
@@ -251,11 +253,11 @@ function mutation(mode=true){
 }
 
 function mutationCheck(){
-    if (level>1 && mutationFlag1==false){
+    if (level>mutationLevel1 && mutationFlag1==false){
         mutationFlag1 = true;
         mutation(mutationFlag1);
     }
-    if (level>2 && mutationFlag2==false){
+    if (level>mutationLevel2 && mutationFlag2==false){
         mutationFlag2 = true;
         mutation(mutationFlag2);
     }
