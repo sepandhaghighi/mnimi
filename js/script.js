@@ -244,17 +244,10 @@ function scoreUpdate(){
 }
 
 function gameOver(){
-    clearTimeouts();
-    clear();
-    currentMove = 0;
     gameCounter = gameCounter + 1;
     if (score>bestScore){
         bestScore = score;
     }
-    playerFlag = false;
-    simFlag = false;
-    level = 1;
-    speed = speedDefault ;
     swal({
           title:"",
           text: '<p style="font-size:26px;">Score : '+score.toString()+'</p>',
@@ -267,9 +260,7 @@ function gameOver(){
         document.getElementById("score_button").style.display="inline";
     }
     localSave(bestScore,gameCounter);
-    score = 0;
-    scoreUpdate();
-    startButtonUpdate(null);
+    restartGame();
 }
 
 function startButtonUpdate(i){
