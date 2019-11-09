@@ -202,7 +202,7 @@ function sequence(i){
     item = selectedItem[i];
     set(item);
     if((i+1)>=selectedItem.length){
-        timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;playerFlag = true;},speed));
+        timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;},speed));
     }
     else{
         timeouts.push(window.setTimeout(function(){reset(item);},speed));
@@ -368,7 +368,7 @@ function playerGo(){
         document.getElementById(i.toString()).style.color = textColor;
         document.getElementById(i.toString()).style.fontWeight = "bold";
     }
-    timeouts.push(window.setTimeout(function(){clear();},1000));
+    timeouts.push(window.setTimeout(function(){clear();playerFlag = true;},1000));
 }
 
 function startGame(){
