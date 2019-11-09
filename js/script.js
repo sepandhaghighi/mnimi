@@ -10,6 +10,7 @@ var timeouts = [];
 var currentMove = 0;
 var simFlag = false;
 var playerFlag = false;
+var mutationFlag = false;
 var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
 var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
@@ -211,6 +212,31 @@ function simulation(){
     selectItems();
     sequence(0);
 }
+
+function mutation(mode=true){
+    if (mode==true){
+        var table,row,col1,col2
+        table = document.getElementById("mnimi");
+        blockNumber = 6;
+        row = table.insertRow(1);
+        row.id="mutation-row";
+        col1 = row.insertCell(0);
+        col1.id="5";
+        col1.onclick = function(){replyClick("5")};
+        col2 = row.insertCell(1);
+        col2.id="6";
+        col2.onclick = function(){replyClick("6")};
+    }
+    else{
+        blockNumber = 4;
+        var row;
+        row = document.getElementById("mutation-row")
+        row.remove();
+    }
+    init();
+    
+}
+
 function scoreUpdate(){
     var win;
     win = document.getElementById("win");
@@ -264,6 +290,10 @@ function nextLevel(){
     level = level + 1;
     if (speed>450){
         speed = speed - 100;
+    }
+    if (level>1 && mutationFlag==false){
+        mutationFlag = true;
+        mutation(mutationFlag);
     }
     score = score +1;
     scoreUpdate();
@@ -356,6 +386,10 @@ function restartGame(){
     level=1;
     startButtonUpdate(null);
     scoreUpdate();
+    if (mutationFlag==true){
+        mutationFlag = false;
+        mutation(mutationFlag);
+    }
     init();
 }
 
