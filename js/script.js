@@ -217,15 +217,15 @@ function mutation(mode=true){
     if (mode==true){
         var table,row,col1,col2
         table = document.getElementById("mnimi");
-        blockNumber = 6;
+        blockNumber = blockNumber+2;
         row = table.insertRow(1);
         row.id="mutation-row";
         col1 = row.insertCell(0);
-        col1.id="5";
-        col1.onclick = function(){replyClick("5")};
+        col1.id=(blockNumber-1).toString();
+        col1.onclick = function(){replyClick(col1.id)};
         col2 = row.insertCell(1);
-        col2.id="6";
-        col2.onclick = function(){replyClick("6")};
+        col2.id=(blockNumber).toString();
+        col2.onclick = function(){replyClick(col2.id)};
     }
     else{
         blockNumber = 4;
