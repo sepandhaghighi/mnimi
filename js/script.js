@@ -10,7 +10,8 @@ var timeouts = [];
 var currentMove = 0;
 var simFlag = false;
 var playerFlag = false;
-var mutationFlag = false;
+var mutationFlag1 = false;
+var mutationFlag2 = false;
 var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
 var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
@@ -219,7 +220,12 @@ function mutation(mode=true){
         table = document.getElementById("mnimi");
         blockNumber = blockNumber+2;
         row = table.insertRow(1);
-        row.id="mutation-row";
+        if (mutationFlag2==false){
+            row.id="mutation-row1";
+        }
+        else{
+            row.id="mutation-row2";
+        }
         col1 = row.insertCell(0);
         col1.id=(blockNumber-1).toString();
         col1.onclick = function(){replyClick(col1.id)};
@@ -229,12 +235,30 @@ function mutation(mode=true){
     }
     else{
         blockNumber = 4;
-        var row;
-        row = document.getElementById("mutation-row")
-        row.remove();
+        var row1,row2;
+        row1 = document.getElementById("mutation-row1");
+        row2 = document.getElementById("mutation-row2");
+        if (row1!=null){
+            row1.remove();
+        }
+        if (row2!=null){
+            row2.remove();
+        }
+        
     }
     init();
     
+}
+
+function mutationCheck(){
+    if (level>1 && mutationFlag1==false){
+        mutationFlag1 = true;
+        mutation(mutationFlag1);
+    }
+    if (level>2 && mutationFlag2==false){
+        mutationFlag2 = true;
+        mutation(mutationFlag2);
+    }
 }
 
 function scoreUpdate(){
@@ -282,10 +306,7 @@ function nextLevel(){
     if (speed>450){
         speed = speed - 100;
     }
-    if (level>1 && mutationFlag==false){
-        mutationFlag = true;
-        mutation(mutationFlag);
-    }
+    mutationCheck();
     score = score +1;
     scoreUpdate();
     startButtonUpdate(level);
@@ -377,9 +398,10 @@ function restartGame(){
     level=1;
     startButtonUpdate(null);
     scoreUpdate();
-    if (mutationFlag==true){
-        mutationFlag = false;
-        mutation(mutationFlag);
+    if (mutationFlag1==true || mutationFlag2==true){
+        mutationFlag1 = false;
+        mutationFlag2 = false;
+        mutation(false);
     }
     init();
 }
