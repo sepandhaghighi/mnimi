@@ -12,7 +12,7 @@ Mnimi is a game of memory skill inspired by Simon electronic game.
 The game creates a series of lights and requires a user to repeat the sequence. If the user succeeds, the series becomes progressively longer and more complex. Once the user fails, the game is over.
 
 <p align="center">
-  <img src="http://www.mnimi.ir/images/help.gif" alt="Mnimi Animation" width="550px" height="707px">
+  <img src="http://www.mnimi.ir/images/help.gif" alt="Mnimi Animation" width="550px" height="580px">
 </p>
 <p align="center">
    Simple Game Just For Fun :bowtie::see_no_evil:
