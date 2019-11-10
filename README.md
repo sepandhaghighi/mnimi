@@ -34,21 +34,22 @@ The game creates a series of lights and requires a user to repeat the sequence. 
 ## Dependencies
 
 ### Code
-	- [SweetAlert](https://sweetalert.js.org/ "SweetAlert")
-	- [Particles.js](https://github.com/VincentGarreau/particles.js/ "Particles.js")
-	- [Font-Awesome Icon Set](http://fontawesome.io/ "Font-Awesome Icon Set")
-	- [Shortcut.js](http://openjs.com/scripts/events/keyboard_shortcuts/ "Shortcut.js")
+
+- [SweetAlert](https://sweetalert.js.org/ "SweetAlert")
+- [Particles.js](https://github.com/VincentGarreau/particles.js/ "Particles.js")
+- [Font-Awesome Icon Set](http://fontawesome.io/ "Font-Awesome Icon Set")
+- [Shortcut.js](http://openjs.com/scripts/events/keyboard_shortcuts/ "Shortcut.js")
 
 ### Music
-	- Track-1 : A New Beginning - [Bensound.com](http://Bensound.com)
+- Track-1 : A New Beginning - [Bensound.com](http://Bensound.com)
 
-	- Track-2 : Happiness - [Bensound.com](http://Bensound.com)
+- Track-2 : Happiness - [Bensound.com](http://Bensound.com)
 
-	- Track-3 : Buddy - [Bensound.com](http://Bensound.com)
+- Track-3 : Buddy - [Bensound.com](http://Bensound.com)
 
-	- Track-4 : Cute - [Bensound.com](http://Bensound.com)
+- Track-4 : Cute - [Bensound.com](http://Bensound.com)
 
-	- Track-5 : Tenderness - [Bensound.com](http://Bensound.com)
+- Track-5 : Tenderness - [Bensound.com](http://Bensound.com)
 
 
 <a href="https://www.netlify.com">
