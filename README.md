@@ -1,8 +1,3 @@
-# Mnimi
-
-----------		
-
-
 <div align="center">
 <img src="images/og-icon.png">
 <a href="http://www.mnimi.ir"><img src="https://img.shields.io/badge/GAME-PLAY!-green.svg"></a>
