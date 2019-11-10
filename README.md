@@ -4,7 +4,7 @@
 
 
 <div align="center">
-
+<img src="images/og-icon.png">
 <a href="http://www.mnimi.ir"><img src="https://img.shields.io/badge/GAME-PLAY!-green.svg"></a>
 <a href="http://www.mnimi.ir/donate.html"><img src="https://img.shields.io/badge/SUPPORT-DONATE-red.svg"></a>
 <a href="https://github.com/sepandhaghighi/mnimi/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"/></a>
