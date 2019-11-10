@@ -104,7 +104,7 @@ function localLoad(){
 function redirect(flag){
     switch(flag){
         case 1:
-            window.open("");
+            window.open("https://github.com/sepandhaghighi/mnimi");
             break;
         case 2:
             swal({   
@@ -114,7 +114,7 @@ function redirect(flag){
             });
             break;
         case 3:
-            window.open("");
+            window.open("mailto:info@mnimi.ir");
             break;
         case 4:
             window.open("https://www.payping.ir/sepandhaghighi");
