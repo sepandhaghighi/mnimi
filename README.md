@@ -12,7 +12,7 @@ Mnimi is a game of memory skill inspired by Simon electronic game.
 The game creates a series of lights and requires a user to repeat the sequence. If the user succeeds, the series becomes progressively longer and more complex. Once the user fails, the game is over.
 
 <p align="center">
-  <img src="http://www.mnimi.ir/images/help.gif" alt="Mnimi Animation" width="550px" height="580px">
+  <img src="http://www.mnimi.ir/images/help.gif" alt="Mnimi Animation" width="550px" height="700px">
 </p>
 <p align="center">
    Simple Game Just For Fun :bowtie::see_no_evil:
@@ -36,15 +36,15 @@ The game creates a series of lights and requires a user to repeat the sequence. 
 - [Shortcut.js](http://openjs.com/scripts/events/keyboard_shortcuts/ "Shortcut.js")
 
 ### Music
-- Track-1 : A New Beginning - [Bensound.com](http://Bensound.com)
+- Track-1 : Ukulele - [Bensound.com](https://www.bensound.com/bensound-music/bensound-ukulele.mp3)
 
-- Track-2 : Happiness - [Bensound.com](http://Bensound.com)
+- Track-2 : Sunny - [Bensound.com](https://www.bensound.com/bensound-music/bensound-sunny.mp3)
 
-- Track-3 : Buddy - [Bensound.com](http://Bensound.com)
+- Track-3 : Smile - [Bensound.com](https://www.bensound.com/bensound-music/bensound-smile.mp3)
 
-- Track-4 : Cute - [Bensound.com](http://Bensound.com)
+- Track-4 : A Day To Remember - [Bensound.com](https://www.bensound.com/bensound-music/bensound-adaytoremember.mp3)
 
-- Track-5 : Tenderness - [Bensound.com](http://Bensound.com)
+- Track-5 : Acoustic Breeze - [Bensound.com](https://www.bensound.com/bensound-music/bensound-acousticbreeze.mp3)
 
 
 <a href="https://www.netlify.com">
