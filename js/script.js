@@ -408,5 +408,5 @@ function restartGame(){
     init();
 }
 
-shortcut.add("h",function(){swalHelp();});
+shortcut.add("q",function(){swalHelp();});
 shortcut.add("r",function(){restartGame();});
