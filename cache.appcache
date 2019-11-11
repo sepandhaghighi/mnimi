@@ -6,6 +6,7 @@ CACHE MANIFEST
 # Main page
 index.html
 donate.html
+help.html
 404.html
 
 # LESS
