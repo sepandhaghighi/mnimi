@@ -8,8 +8,11 @@
 
 ----------	
 
-Mnimi is a game of memory skill inspired by Simon electronic game.
-The game creates a series of lights and requires a user to repeat the sequence. If the user succeeds, the series becomes progressively longer and more complex. Once the user fails, the game is over.
+**Mnimi** is a game of memory skill inspired by [Simon electronic game](https://en.wikipedia.org/wiki/Simon_(game)). The game creates a series of lights and requires a user to repeat the sequence.
+
+Initially, the game has four colored buttons. A round in **Mnimi** consists of the game lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of colors, buttons to be pressed and sequence speed increases. Once the user fails, the game is over.
+
+In Greek, **Mnimi** means memory.
 
 <p align="center">
   <img src="http://www.mnimi.ir/images/help.gif" alt="Mnimi Animation" width="550px" height="700px">
