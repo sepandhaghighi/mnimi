@@ -209,7 +209,7 @@ body{
     margin: auto;
     padding: auto;
     width: 550px;
-    height: 550px;
+    height: 700px;
     
 }
 #submit_button{
@@ -469,7 +469,7 @@ button {
     }
     .help_image{
     width: 550px;
-    height: 550px;
+    height: 700px;
     
 }
     .hint_table{
@@ -506,7 +506,7 @@ button {
     
         .help_image{
     width: 300px;
-    height: 300px;
+    height: 382px;
     
 }
     
@@ -527,7 +527,7 @@ button {
     
         .help_image{
     width: 550px;
-        height: 550px;
+        height: 700px;
     
 }
 
