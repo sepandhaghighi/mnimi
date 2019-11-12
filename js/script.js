@@ -13,7 +13,7 @@ var playerFlag = false;
 var mutationFlag1 = false;
 var mutationFlag2 = false;
 var mutationLevel1 = 7;
-var mutationLevel2 = 15;
+var mutationLevel2 = 14;
 var gameCounter=0;
 var tickAwsome = '<i class="fa fa-check fa-3x" aria-hidden="true" style="color:white"></i>'
 var starAwsome = '<i class="fa fa-star fa-3x" aria-hidden="true" style="color:white"></i>'
@@ -25,6 +25,7 @@ var speed = 3000;
 var speedDefault = 3000;
 var offset = 1000;
 var level = 1;
+var selectCounter = 1;
 var score = 0;
 var bestScore=0;
 var musicTemp=[];
@@ -191,7 +192,7 @@ function selectItems(){
     selectedItem = [];
     var item;
     var i=0;
-    for(i;i<level;i++){
+    for(i;i<selectCounter;i++){
         item = Math.floor((Math.random() * blockNumber))+1;
         selectedItem.push(item);
     }
@@ -305,7 +306,10 @@ function nextLevel(){
     playerFlag = false;
     currentMove = 0;
     level = level + 1;
-    if (speed>450){
+    if ((level % 2)==0){
+        selectCounter = selectCounter + 1;
+    }
+    if (speed>550){
         speed = speed - 100;
     }
     mutationCheck();
@@ -320,7 +324,7 @@ function replyClick(e) {
        set(e,2);        
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
-            if (currentMove==level){
+            if (currentMove==selectCounter){
                 trophy();
                 timeouts.push(window.setTimeout(function(){nextLevel();},700));
             }
@@ -398,6 +402,7 @@ function restartGame(){
     currentMove=0;
     speed=speedDefault;
     level=1;
+    selectCounter = 1;
     startButtonUpdate(null);
     scoreUpdate();
     if (mutationFlag1==true || mutationFlag2==true){
