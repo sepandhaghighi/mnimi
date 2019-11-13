@@ -325,6 +325,7 @@ function replyClick(e) {
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
             if (currentMove==selectCounter){
+                playerFlag = false;
                 clearTimeouts();
                 trophy();
                 timeouts.push(window.setTimeout(function(){nextLevel();},700));
