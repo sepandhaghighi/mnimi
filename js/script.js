@@ -189,10 +189,10 @@ function reset(index){
 }
 
 function selectItems(){
-    selectedItem = [];
+    var newItemsCounter = selectCounter - selectedItem.length;
     var item;
     var i=0;
-    for(i;i<selectCounter;i++){
+    for(i;i<newItemsCounter;i++){
         item = Math.floor((Math.random() * blockNumber))+1;
         selectedItem.push(item);
     }
@@ -396,6 +396,7 @@ function clearTimeouts(){
 }
 
 function restartGame(){
+    selectedItem=[];
     clearTimeouts();
     clear();
     simFlag=false;
