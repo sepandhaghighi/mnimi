@@ -35,6 +35,10 @@ var score = 0;
 var bestScore=0;
 var musicTemp=[];
 var hr = (new Date()).getHours();
+var startTime = null;
+var endTime = null;
+var gameTime = "00:00:00";;
+var bestGameTime = "00:00:00";
 var musicList=["files/bensound-acousticbreeze.mp3","files/bensound-adaytoremember.mp3","files/bensound-smile.mp3","files/bensound-sunny.mp3","files/bensound-ukulele.mp3"];
 var musicRandom=Math.floor(Math.random()*musicList.length);
 var audio = new Audio(musicList[musicRandom]);
@@ -77,10 +81,11 @@ function audioControl(){
     }
 }
 
-function localSave(s,c){
+function localSave(s,c,t){
     if (typeof(Storage) !== "undefined") {
         localStorage.setItem("mnimi_score", s);
         localStorage.setItem("mnimi_game", c);
+        localStorage.setItem("mnimi_time", t);
     }
     
 }
@@ -90,13 +95,18 @@ function localLoad(){
         gameCounter=parseInt(localStorage.getItem("mnimi_game"));
         if (gameCounter){
             bestScore=parseInt(localStorage.getItem("mnimi_score"));
+            bestGameTime=localStorage.getItem("mnimi_time");
+            if (bestGameTime==null){
+               bestGameTime="00:00:00"; 
+            }
             if (bestScore==NaN){
                 bestScore=0;
             }
             if (bestScore > 0){
                 document.getElementById("score_button").innerHTML="SCORE("+bestScore.toString()+")";
                 document.getElementById("score_button").style.display="inline";
-            }  
+            }
+            
         }
          else{
              
@@ -275,11 +285,36 @@ function scoreUpdate(){
     win = document.getElementById("win");
     win.innerHTML = score.toString();
 }
-
+function timeConvert(start,stop){
+    var diff = stop - start;
+    var hhString,mmString,ssString;
+    var hh = Math.floor(diff / 1000 / 60 / 60);
+    diff -= hh * 1000 * 60 * 60;
+    var mm = Math.floor(diff / 1000 / 60);
+    diff -= mm * 1000 * 60;
+    var ss = Math.floor(diff / 1000);
+    hhString = hh.toString();
+    mmString = mm.toString();
+    ssString = ss.toString();
+    if (hhString.length==1){
+        hhString = "0"+hhString;
+    }
+    if (mmString.length==1){
+        mmString = "0"+mmString;
+    }
+    if (ssString.length==1){
+        ssString = "0"+ssString();
+    }
+    return hhString+":"+mmString+":"+ssString
+    
+}
 function gameOver(){
+    endTime = new Date();
+    gameTime = timeConvert(startTime,endTime);
     gameCounter = gameCounter + 1;
     if (score>bestScore){
         bestScore = score;
+        bestGameTime = gameTime;
     }
     swal({
           title:"",
@@ -292,7 +327,7 @@ function gameOver(){
         document.getElementById("score_button").innerHTML="SCORE("+bestScore.toString()+")";
         document.getElementById("score_button").style.display="inline";
     }
-    localSave(bestScore,gameCounter);
+    localSave(bestScore,gameCounter,bestGameTime);
     restartGame();
 }
 
@@ -353,7 +388,7 @@ function scoreTable(){
     if (gameCounter>0){
             swal({
                     title:"Score!",
-                    text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Best Score</td><td style="padding:20px;">'+bestScore.toString()+'</td></tr style="padding:20px;"><tr><td>Game</td><td style="padding:20px;">'+gameCounter.toString()+'</td></tr></table>',
+                    text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Best Score</td><td style="padding:20px;">'+bestScore.toString()+'</td></tr style="padding:20px;"><tr><td>Game</td><td style="padding:20px;">'+gameCounter.toString()+'</td></tr><tr><td>Time</td><td style="padding:20px;">'+bestGameTime.toString()+'</td></tr></table>',
                     html: true,
                     customClass: "swal-score"
                     });
@@ -376,9 +411,10 @@ function trophy(){
 
 function levelShow(){
     var i;
-    var message = "Start"
-    if (level!=1){
-        message = "Level "+level.toString();
+    var message = "Level "+level.toString();
+    if (level==1){
+        startTime = new Date();
+        message = "Start";
     }
     for (i=1;i<blockNumber+1;i++){
         document.getElementById(i.toString()).innerHTML = message;
@@ -419,6 +455,8 @@ function clearTimeouts(){
 
 function restartGame(){
     selectedItem=[];
+    startTime=null;
+    endTime=null;
     clearTimeouts();
     clear();
     simFlag=false;
