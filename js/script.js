@@ -306,7 +306,7 @@ function nextLevel(){
     playerFlag = false;
     currentMove = 0;
     level = level + 1;
-    if (Math.random()>0.5){
+    if (Math.random()>0.3){
         selectCounter = selectCounter + 1;
     }
     if (speed>550){
