@@ -401,7 +401,8 @@ function startGame(){
     if (simFlag==false && playerFlag==false){
         simFlag = true;
         levelShow();
-        timeouts.push(window.setTimeout(function(){simulation()},levelShowDelay));
+        timeouts.push(window.setTimeout(function(){clear();},levelShowDelay))
+        timeouts.push(window.setTimeout(function(){simulation()},levelShowDelay + offset));
     }
     if (playerFlag==true){
         playerGo();
