@@ -303,7 +303,7 @@ function timeConvert(start,stop){
         mmString = "0"+mmString;
     }
     if (ssString.length==1){
-        ssString = "0"+ssString();
+        ssString = "0"+ssString;
     }
     return hhString+":"+mmString+":"+ssString
     
@@ -318,7 +318,7 @@ function gameOver(){
     }
     swal({
           title:"",
-          text: '<p style="font-size:26px;">Score : '+score.toString()+'</p>',
+          text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Score</td><td style="padding:20px;">'+score.toString()+'</tr><tr><td>Time</td><td style="padding:20px;">'+gameTime.toString()+'</td></tr></table>',
           html: true,
           customClass: "swal-score",
           imageUrl: "images/gameover.png"
