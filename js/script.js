@@ -24,6 +24,11 @@ var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
 var speed = 3000;
 var speedDefault = 3000;
 var offset = 1000;
+var nextLevelDelay = 1000;
+var resetDelay = 500;
+var gameOverDelay = 500;
+var goDelay = 1300;
+var levelShowDelay = 1300;
 var level = 1;
 var selectCounter = 1;
 var score = 0;
@@ -330,16 +335,16 @@ function replyClick(e) {
                 playerFlag = false;
                 clearTimeouts();
                 trophy();
-                timeouts.push(window.setTimeout(function(){nextLevel();},700));
+                timeouts.push(window.setTimeout(function(){nextLevel();},nextLevelDelay));
             }
            else{
-               timeouts.push(window.setTimeout(function(){reset(e);},500));
+               timeouts.push(window.setTimeout(function(){reset(e);},resetDelay));
            }
         
         }
        else{
         set(e,3);
-        timeouts.push(window.setTimeout(function(){reset(e);gameOver();},500));
+        timeouts.push(window.setTimeout(function(){reset(e);gameOver();},gameOverDelay));
        }
     }
 }
@@ -389,14 +394,14 @@ function playerGo(){
         document.getElementById(i.toString()).style.color = textColor;
         document.getElementById(i.toString()).style.fontWeight = "bold";
     }
-    timeouts.push(window.setTimeout(function(){clear();playerFlag = true;},1000));
+    timeouts.push(window.setTimeout(function(){clear();playerFlag = true;},goDelay));
 }
 
 function startGame(){
     if (simFlag==false && playerFlag==false){
         simFlag = true;
         levelShow();
-        timeouts.push(window.setTimeout(function(){simulation()},1300));
+        timeouts.push(window.setTimeout(function(){simulation()},levelShowDelay));
     }
     if (playerFlag==true){
         playerGo();
