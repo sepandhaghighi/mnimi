@@ -213,6 +213,7 @@ function sequence(i){
 
 
 function simulation(){
+    clear();
     selectItems();
     sequence(0);
 }
@@ -316,6 +317,7 @@ function nextLevel(){
     score = score +1;
     scoreUpdate();
     startButtonUpdate(level);
+    startGame();
 }
 
 
@@ -367,6 +369,19 @@ function trophy(){
     }
 }
 
+function levelShow(){
+    var i;
+    var message = "Start"
+    if (level!=1){
+        message = "Level "+level.toString();
+    }
+    for (i=1;i<blockNumber+1;i++){
+        document.getElementById(i.toString()).innerHTML = message;
+        document.getElementById(i.toString()).style.color = textColor;
+        document.getElementById(i.toString()).style.fontWeight = "bold";
+    }
+}
+
 function playerGo(){
     var i;
     for (i=1;i<blockNumber+1;i++){
@@ -380,7 +395,8 @@ function playerGo(){
 function startGame(){
     if (simFlag==false && playerFlag==false){
         simFlag = true;
-        simulation();
+        levelShow();
+        timeouts.push(window.setTimeout(function(){simulation()},1300));
     }
     if (playerFlag==true){
         playerGo();
