@@ -388,7 +388,7 @@ function scoreTable(){
     if (gameCounter>0){
             swal({
                     title:"Score!",
-                    text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Best Score</td><td style="padding:20px;">'+bestScore.toString()+'</td></tr style="padding:20px;"><tr><td>Game</td><td style="padding:20px;">'+gameCounter.toString()+'</td></tr><tr><td>Time</td><td style="padding:20px;">'+bestGameTime.toString()+'</td></tr></table>',
+                    text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Best Score</td><td style="padding:20px;">'+bestScore.toString()+'</td></tr><tr><td>Time</td><td style="padding:20px;">'+bestGameTime.toString()+'</td></tr><tr><td>Game</td><td style="padding:20px;">'+gameCounter.toString()+'</td></tr></table>',
                     html: true,
                     customClass: "swal-score"
                     });
