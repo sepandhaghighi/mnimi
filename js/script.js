@@ -315,10 +315,14 @@ function gameOver(){
     if (score>bestScore){
         bestScore = score;
         bestGameTime = gameTime;
+        newRecordNotif="<h2>New Record!</h2>&nbsp;";
+    }
+    else{
+        newRecordNotif="";
     }
     swal({
           title:"",
-          text: '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Score</td><td style="padding:20px;">'+score.toString()+'</tr><tr><td>Time</td><td style="padding:20px;">'+gameTime.toString()+'</td></tr></table>',
+          text: newRecordNotif + '<table align="center" style="font-size:26px;"><tr><td style="padding:20px;">Score</td><td style="padding:20px;">'+score.toString()+'</tr><tr><td>Time</td><td style="padding:20px;">'+gameTime.toString()+'</td></tr></table>',
           html: true,
           customClass: "swal-score",
           imageUrl: "images/gameover.png"
