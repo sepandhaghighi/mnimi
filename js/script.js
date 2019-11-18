@@ -185,12 +185,12 @@ function init() {
     }
 }
 
-function set(index,mode=1){
+function set(index,mode=1,seq=1){
     if(mode==1){
-        document.getElementById(index.toString()).innerHTML = starAwsome;
+        document.getElementById(index.toString()).innerHTML = seq.toString() + starAwsome;
     }
     else if(mode==2){
-        document.getElementById(index.toString()).innerHTML = tickAwsome;
+        document.getElementById(index.toString()).innerHTML = seq.toString() + tickAwsome;
     }
     else {
         document.getElementById(index.toString()).innerHTML = timesAwsome;
@@ -216,7 +216,7 @@ function selectItems(){
 function sequence(i){
     var item;
     item = selectedItem[i];
-    set(item);
+    set(item,mode=1,seq=i+1);
     if((i+1)>=selectedItem.length){
         timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;},speed));
     }
@@ -365,7 +365,7 @@ function nextLevel(){
 
 function replyClick(e) {
     if (simFlag==false && playerFlag==true){
-       set(e,2);        
+       set(e,2,currentMove+1);        
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
             if (currentMove==selectCounter){
