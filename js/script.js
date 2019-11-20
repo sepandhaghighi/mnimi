@@ -365,6 +365,8 @@ function nextLevel(){
 
 function replyClick(e) {
     if (simFlag==false && playerFlag==true){
+       clear();
+       clearTimeouts();
        set(e,2,currentMove+1);        
        if (selectedItem[currentMove]==parseInt(e)){
             currentMove = currentMove + 1;
