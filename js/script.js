@@ -161,6 +161,7 @@ function swalHelp(){
 }
 
 function begin(){
+    tableStyle(mode=false);
     localLoad();
     swalHelp();
     init();
@@ -218,7 +219,7 @@ function sequence(i){
     item = selectedItem[i];
     set(item,mode=1,seq=i+1);
     if((i+1)>=selectedItem.length){
-        timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;},speed));
+        timeouts.push(window.setTimeout(function(){reset(item);playerGo();simFlag = false;tableStyle(mode=true);},speed));
     }
     else{
         timeouts.push(window.setTimeout(function(){reset(item);},speed));
@@ -413,6 +414,19 @@ function trophy(){
     }
 }
 
+function tableStyle(mode=true){
+    var i,item,className;
+    className = "player-turn";
+    if(mode==false){
+        className = "not-allowed";
+    }
+    for (i=1;i<blockNumber+1;i++){
+        item = document.getElementById(i.toString());
+        item.className = className;
+        
+    }
+}
+
 function levelShow(){
     var i;
     var message = "Level "+level.toString();
@@ -439,6 +453,7 @@ function playerGo(){
 
 function startGame(){
     if (simFlag==false && playerFlag==false){
+        tableStyle(mode=false);
         simFlag = true;
         levelShow();
         timeouts.push(window.setTimeout(function(){clear();},levelShowDelay))
@@ -458,6 +473,7 @@ function clearTimeouts(){
 }
 
 function restartGame(){
+    tableStyle(mode=false);
     selectedItem=[];
     startTime=null;
     endTime=null;
