@@ -39,6 +39,9 @@
 #help2,#support2{
     display: none;
 }
+#help,#support{
+        cursor: help;
+}
 .sweet-overlay {
   background-color: rgba(44, 41, 41, 0.6)!important;
 }
