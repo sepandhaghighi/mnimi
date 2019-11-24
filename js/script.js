@@ -384,6 +384,7 @@ function replyClick(e) {
         }
        else{
         set(e,3);
+        playerFlag = false;
         timeouts.push(window.setTimeout(function(){reset(e);gameOver();},gameOverDelay));
        }
     }
