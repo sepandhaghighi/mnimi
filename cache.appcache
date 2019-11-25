@@ -65,7 +65,6 @@ js/shortcut.js
 js/script.js
 js/particles.min.js
 js/app.js
-service-worker.js
 
 
 favicon.ico
