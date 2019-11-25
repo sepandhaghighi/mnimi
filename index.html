@@ -92,9 +92,7 @@
  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(function(reg){
-        console.log("service worker status : okay");
      }).catch(function(err) {
-        console.log("service worker status : error. This happened:", err)
     });
  }
 </script>
