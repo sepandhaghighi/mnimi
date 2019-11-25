@@ -21,7 +21,8 @@ var timesAwsome = '<i class="fa fa-times fa-3x" aria-hidden="true" style="color:
 var trophyAwsome = '<i class="fa fa-trophy fa-3x" aria-hidden="true" style="color:white"></i>'
 var soundOn='<i class="fa fa-volume-up fa-3x" aria-hidden="true" ></i>';
 var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
-var speed = 2100;
+var speed = 2500;
+var speedStep = 400;
 var speedDefault = 3000;
 var offset = 1000;
 var nextLevelDelay = 1000;
@@ -354,7 +355,7 @@ function nextLevel(){
     level = level + 1;
     selectCounter = selectCounter + 1;
     if (speed>550){
-        speed = speed - 100;
+        speed = speed - speedStep;
     }
     mutationCheck();
     score = score +1;
