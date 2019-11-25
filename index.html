@@ -87,5 +87,14 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
 </body>
-
+<script>
+ if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('js/service-worker.js')
+      .then(function(reg){
+        console.log("service worker status : okay");
+     }).catch(function(err) {
+        console.log("service worker status : error. This happened:", err)
+    });
+ }
+</script>
 </html>
