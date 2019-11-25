@@ -1,7 +1,7 @@
 CACHE MANIFEST
 
 # Adds the ability to play the game offline.
-# Updated: 2019-11-25 12:55:59.558
+# Updated: 2019-11-25 17:08:33.172
 
 # Main page
 index.html
@@ -35,6 +35,8 @@ css/themes/google/google.css
 css/sweetalert.css
 
 # Other resources
+images/favicon/6.png
+images/favicon/5.png
 images/favicon/4.png
 images/favicon/1.png
 images/favicon/2.png
