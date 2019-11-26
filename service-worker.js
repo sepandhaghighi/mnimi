@@ -22,7 +22,7 @@ self.addEventListener('install', e => {
         '/css/awsome/less/rotated-flipped.less',
         '/css/awsome/less/screen-reader.less',
         '/css/awsome/less/stacked.less',
-        '/css/awsome/less/variables.less,
+        '/css/awsome/less/variables.less',
         '/css/awsome/scss/font-awesome.scss',
         '/css/awsome/css/font-awesome.min.css',
         '/css/style.css',
