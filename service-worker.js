@@ -35,8 +35,7 @@ self.addEventListener('install', e => {
         '/js/shortcut.js',
         '/js/script.js',
         '/js/particles.min.js',
-        '/js/app.js',
-        '/favicon.ico'
+        '/js/app.js'
           
       ])
           .then(() => self.skipWaiting());
