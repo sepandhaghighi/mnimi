@@ -1,5 +1,5 @@
-const version = "0.0.1";
-const cacheName = 'mnimi-${version}';
+const version = "0.0.2";
+const cacheName = 'mnimi-'+version;
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
