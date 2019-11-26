@@ -1,5 +1,17 @@
-const version = "0.0.2";
+const version = "0.0.3";
 const cacheName = 'mnimi-'+version;
+
+function clearCache(){
+    caches.keys().then(function(names) {
+    for (let name of names){
+        if (name!=cacheName){
+        caches.delete(name);
+            }
+    }
+        
+});
+}
+
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
