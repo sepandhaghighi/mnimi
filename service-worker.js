@@ -75,7 +75,8 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(clearCache();self.clients.claim(););
+  clearCache();
+  event.waitUntil(self.clients.claim(););
 });
 
 self.addEventListener('fetch', event => {
