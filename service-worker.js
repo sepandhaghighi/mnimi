@@ -1,4 +1,4 @@
-const version = "0.0.3";
+const version = "0.0.4";
 const cacheName = 'mnimi-'+version;
 
 function clearCache(){
@@ -50,6 +50,7 @@ self.addEventListener('install', e => {
         '/images/star.png',
         '/images/sun.png',
         '/images/gameover.png',
+        '/images/help.gif',
         '/images/og-icon.png',
         '/manifest.json',
         '/fonts/JuliusSansOne-Regular.ttf',
