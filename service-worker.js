@@ -1,4 +1,4 @@
-const version = "0.0.4";
+const version = "0.0.5";
 const cacheName = 'mnimi-'+version;
 
 function clearCache(){
