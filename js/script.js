@@ -23,7 +23,7 @@ var soundOn='<i class="fa fa-volume-up fa-3x" aria-hidden="true" ></i>';
 var soundOff='<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>'
 var speed = 2500;
 var speedStep = 400;
-var speedDefault = 3000;
+var speedDefault = 2500;
 var offset = 1000;
 var nextLevelDelay = 1000;
 var resetDelay = 500;
