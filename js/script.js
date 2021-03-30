@@ -176,7 +176,7 @@ function init() {
     colorCounter = 1;
     gameName = document.getElementById("game_name");
     gameName.style.color = color;
-    gameName.innerHTML = "Mnimi Game v("+version+")";
+    gameName.innerHTML = "Mnimi Game (v"+version+")";
     while (colorCounter < blockNumber+1) {
         randomColor = colorList[Math.floor((Math.random() * colorList.length))].toLowerCase();
         if (randomList.indexOf(randomColor) < 0) {
