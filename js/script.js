@@ -1,3 +1,4 @@
+const version = "0.1.1";
 var colorList = [];
 var blockNumber = 4;
 var darkColors = ["BLACK","DARKSLATEGRAY","SLATEGRAY","DIMGRAY","GRAY","MAROON","BROWN","SIENNA","SADDLEBROWN","CHOCOLATE","PERU","DARKGOLDENROD","GOLDENROD","MIDNIGHTBLUE","NAVY","DARKBLUE","MEDIUMBLUE","BLUE","ROYALBLUE","MEDIUMSLATEBLUE","DODGERBLUE","STEELBLUE","TEAL","DARKCYAN","DARKOLIVEGREEN","OLIVEDRAB","DARKGREEN","GREEN","FORESTGREEN","MEDIUMSEAGREEN","SEAGREEN","LIMEGREEN","LIME","MEDIUMSLATEBLUE","INDIGO","DARKMAGENTA","DARKORCHID","DARKVIOLET","REBECCAPURPLE","BLUEVIOLET","MAGENTA","DARKKHAKI","ORANGE","DARKORANGE","ORANGERED","MEDIUMVIOLETRED","DEEPPINK","DARKRED","FIREBRICK","RED","CRIMSON"];
@@ -175,7 +176,7 @@ function init() {
     colorCounter = 1;
     gameName = document.getElementById("game_name");
     gameName.style.color = color;
-    gameName.innerHTML = "Mnimi Game";
+    gameName.innerHTML = "Mnimi Game v("+version+")";
     while (colorCounter < blockNumber+1) {
         randomColor = colorList[Math.floor((Math.random() * colorList.length))].toLowerCase();
         if (randomList.indexOf(randomColor) < 0) {
