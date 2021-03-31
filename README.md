@@ -37,6 +37,8 @@ In Greek, **Mnimi** means memory.
 - [Particles.js](https://github.com/VincentGarreau/particles.js/ "Particles.js")
 - [Font-Awesome Icon Set](http://fontawesome.io/ "Font-Awesome Icon Set")
 - [Shortcut.js](http://openjs.com/scripts/events/keyboard_shortcuts/ "Shortcut.js")
+- [JavaScript Minifier](https://javascript-minifier.com/ "JavaScript Minifier")
+- [CSS Minifier](https://cssminifier.com/ "CSS Minifier")
 
 ### Music
 - Track-1 : Ukulele - [Bensound.com](https://www.bensound.com/bensound-music/bensound-ukulele.mp3)
