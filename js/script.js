@@ -127,7 +127,7 @@ function redirect(flag){
         case 2:
             swal({   
             title:"Bitocin Wallet",
-            text:"1XGr9qbZjBpUQJJSB6WtgBQbDTgrhPLPA",
+            text:"1KtNLEEeUbTEK9PdN6Ya3ZAKXaqoKUuxCy",
             customClass: 'swal-bitcoin'
             });
             break;
@@ -135,7 +135,7 @@ function redirect(flag){
             window.open("mailto:info@mnimi.ir");
             break;
         case 4:
-            window.open("https://www.payping.ir/sepandhaghighi");
+            window.open("https://www.coffeete.ir/opensource");
             break;
         case 5:
             window.open("help.html","_self")
